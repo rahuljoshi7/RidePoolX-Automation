@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RideEase – Available Rides</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body class="inner-page">
+
+  <nav class="navbar">
+    <div class="nav-brand">🚗 RideEase</div>
+    <div class="nav-links">
+      <a href="search.html">Search</a>
+      <a href="#" onclick="logout()">Logout</a>
+    </div>
+  </nav>
+
+  <div class="page-container">
+    <div class="page-header">
+      <h2>Available Rides</h2>
+      <p id="routeSummary">Showing rides for your route</p>
+    </div>
+
+    <div id="rideList" class="ride-list">
+
+      <!-- Ride Card 1 -->
+      <div class="ride-card" id="ride-1">
+        <div class="ride-info">
+          <div class="driver-avatar">AK</div>
+          <div class="ride-details">
+            <h3 class="driver-name" id="driver1">Arjun Kumar</h3>
+            <p class="ride-route"><span id="src1">Mumbai</span> → <span id="dst1">Pune</span></p>
+            <p class="ride-meta">⏰ 08:30 AM &nbsp;|&nbsp; 👥 3 seats left &nbsp;|&nbsp; 🚘 Maruti Swift</p>
+          </div>
+        </div>
+        <div class="ride-action">
+          <span class="ride-price">₹350</span>
+          <button class="btn btn-book" id="bookBtn1" onclick="bookRide('ride-1', 'Arjun Kumar')">Book Now</button>
+        </div>
+      </div>
+
+      <!-- Ride Card 2 -->
+      <div class="ride-card" id="ride-2">
+        <div class="ride-info">
+          <div class="driver-avatar" style="background:#f59e0b">PS</div>
+          <div class="ride-details">
+            <h3 class="driver-name" id="driver2">Priya Sharma</h3>
+            <p class="ride-route"><span id="src2">Mumbai</span> → <span id="dst2">Pune</span></p>
+            <p class="ride-meta">⏰ 09:00 AM &nbsp;|&nbsp; 👥 2 seats left &nbsp;|&nbsp; 🚘 Honda City</p>
+          </div>
+        </div>
+        <div class="ride-action">
+          <span class="ride-price">₹400</span>
+          <button class="btn btn-book" id="bookBtn2" onclick="bookRide('ride-2', 'Priya Sharma')">Book Now</button>
+        </div>
+      </div>
+
+      <!-- Ride Card 3 -->
+      <div class="ride-card" id="ride-3">
+        <div class="ride-info">
+          <div class="driver-avatar" style="background:#10b981">RM</div>
+          <div class="ride-details">
+            <h3 class="driver-name" id="driver3">Rahul Mehta</h3>
+            <p class="ride-route"><span id="src3">Mumbai</span> → <span id="dst3">Pune</span></p>
+            <p class="ride-meta">⏰ 10:15 AM &nbsp;|&nbsp; 👥 4 seats left &nbsp;|&nbsp; 🚘 Toyota Innova</p>
+          </div>
+        </div>
+        <div class="ride-action">
+          <span class="ride-price">₹300</span>
+          <button class="btn btn-book" id="bookBtn3" onclick="bookRide('ride-3', 'Rahul Mehta')">Book Now</button>
+        </div>
+      </div>
+
+      <!-- Ride Card 4 -->
+      <div class="ride-card" id="ride-4">
+        <div class="ride-info">
+          <div class="driver-avatar" style="background:#8b5cf6">SN</div>
+          <div class="ride-details">
+            <h3 class="driver-name" id="driver4">Sneha Nair</h3>
+            <p class="ride-route"><span id="src4">Mumbai</span> → <span id="dst4">Pune</span></p>
+            <p class="ride-meta">⏰ 11:45 AM &nbsp;|&nbsp; 👥 1 seat left &nbsp;|&nbsp; 🚘 Hyundai i20</p>
+          </div>
+        </div>
+        <div class="ride-action">
+          <span class="ride-price">₹380</span>
+          <button class="btn btn-book" id="bookBtn4" onclick="bookRide('ride-4', 'Sneha Nair')">Book Now</button>
+        </div>
+      </div>
+
+    </div><!-- end rideList -->
+  </div>
+
+  <script src="../js/rides.js"></script>
+</body>
+</html>

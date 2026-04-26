@@ -1,0 +1,52 @@
+name: RidePoolX Selenium Tests
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  selenium-automation:
+    name: Run Selenium Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Java 11
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+
+      - name: Install Google Chrome
+        uses: browser-actions/setup-chrome@v1
+
+      - name: Start local web server for RideEase
+        run: |
+          cd RideEase
+          python3 -m http.server 8090 &
+          sleep 3
+          echo "Website server started at http://localhost:8090"
+
+      - name: Verify website is reachable
+        run: curl -f http://localhost:8090/index.html
+
+      - name: Run Selenium + TestNG Tests
+        run: mvn test -Dheadless=true -DbaseUrl=http://localhost:8090/index.html
+
+      - name: Upload TestNG Reports
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: testng-reports
+          path: target/surefire-reports/
+
+      - name: Upload Cucumber Reports
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: cucumber-reports
+          path: target/cucumber-reports/

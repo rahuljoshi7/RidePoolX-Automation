@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<!--
+    testng.xml — TestNG Suite Configuration
+    ═══════════════════════════════════════════════════════════════
+    Runs: LoginTest (6 TCs) + BookingTest (6 TCs) = 12 total tests
+    BDD tests are run separately via CucumberRunner.java
+
+    To run: mvn test   OR   right-click → Run in IntelliJ
+    ═══════════════════════════════════════════════════════════════
+-->
+<suite name="RidePoolX Full Suite" verbose="2">
+
+    <test name="Login Tests">
+        <classes>
+            <class name="tests.LoginTest"/>
+        </classes>
+    </test>
+
+    <test name="Booking Flow Tests">
+        <classes>
+            <class name="tests.BookingTest"/>
+        </classes>
+    </test>
+
+</suite>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RideEase – Booking Confirmed</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body class="inner-page">
+
+  <nav class="navbar">
+    <div class="nav-brand">🚗 RideEase</div>
+    <div class="nav-links">
+      <a href="search.html">Search</a>
+      <a href="#" onclick="logout()">Logout</a>
+    </div>
+  </nav>
+
+  <div class="page-container confirm-container">
+
+    <div class="confirm-card">
+      <div class="confirm-icon">✅</div>
+      <h2 id="confirmMsg" class="confirm-title">Ride Booked Successfully!</h2>
+      <p id="confirmSubMsg" class="confirm-sub">Your ride has been confirmed.</p>
+
+      <div class="booking-details" id="bookingDetails">
+        <div class="detail-row">
+          <span class="detail-label">Booking ID</span>
+          <span class="detail-value" id="bookingId">#RDE-00123</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Driver</span>
+          <span class="detail-value" id="driverName">Arjun Kumar</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Route</span>
+          <span class="detail-value" id="routeInfo">Mumbai → Pune</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Status</span>
+          <span class="detail-value status-badge" id="bookingStatus">Confirmed</span>
+        </div>
+      </div>
+
+      <div class="confirm-actions">
+        <button class="btn btn-primary" onclick="window.location.href='search.html'">🔍 Search Another Ride</button>
+        <button class="btn btn-outline" onclick="logout()">Logout</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="../js/confirm.js"></script>
+</body>
+</html>

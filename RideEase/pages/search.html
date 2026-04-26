@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RideEase – Search Rides</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body class="inner-page">
+
+  <nav class="navbar">
+    <div class="nav-brand">🚗 RideEase</div>
+    <div class="nav-links">
+      <a href="search.html" class="active">Search</a>
+      <a href="#" onclick="logout()">Logout</a>
+    </div>
+  </nav>
+
+  <div class="page-container">
+    <div class="page-header">
+      <h2>Find a Ride</h2>
+      <p>Search from hundreds of available rides</p>
+    </div>
+
+    <div class="card search-card">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="source">📍 From</label>
+          <input type="text" id="source" name="source" placeholder="Enter pickup location" autocomplete="off"/>
+        </div>
+        <div class="swap-icon">⇄</div>
+        <div class="form-group">
+          <label for="destination">🏁 To</label>
+          <input type="text" id="destination" name="destination" placeholder="Enter drop location" autocomplete="off"/>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="rideDate">📅 Date</label>
+          <input type="date" id="rideDate" name="rideDate"/>
+        </div>
+        <div class="form-group">
+          <label for="seats">👥 Seats</label>
+          <select id="seats" name="seats">
+            <option value="1">1 Seat</option>
+            <option value="2">2 Seats</option>
+            <option value="3">3 Seats</option>
+            <option value="4">4 Seats</option>
+          </select>
+        </div>
+      </div>
+
+      <button id="searchBtn" class="btn btn-primary" onclick="searchRides()">🔍 Search Rides</button>
+    </div>
+
+    <div id="errorSearch" class="error-msg hidden">Please fill in both source and destination.</div>
+  </div>
+
+  <script src="../js/search.js"></script>
+</body>
+</html>
